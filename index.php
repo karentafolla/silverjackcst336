@@ -1,41 +1,29 @@
 <!DOCTYPE html>
-
-
-<?php
-    $card = ["imageName" => "",
-             "score" => "",
-             "suit" => "",
-             "rank" => ""];
-    //indexed array         
-    $deck = [];
-    
-    //assosiative array
-    $player1 =["imageName" => "",
-              "name" => ""];
-    
-    //indexed array
-    // $table = [$player1, $player2, $player3, $player4];
-    
-    //assosiative array
-    $table = ["position1" => $player1,
-              "position2" => $player2,
-              "position3" => $player3,
-              "position4" => $player4];
-    $hand = ["player" => null,
-             "cards" => [], //indexed array of cards
-             "score" => ""]; 
-    
-    $game = ["location", $table, 
-             "hands", []];
-?>
-    
 <html>
     <head>
         <title> </title>
     </head>
     <body>
-    
-    
+        <form action = "game.php" method="POST">
+            <div>
+                <label>Player 1:</label><input type="text" name="p1">
+            </div>
+            <div>
+                <label>Player 2:</label><input type="text" name="p2">
+            </div>
+            <div>
+                <label>Player 3:</label><input type="text" name="p3">
+            </div>
+            <div>
+                <label>Player 4:</label><input type="text" name="p4">
+            </div>
+            <input type="submit" value="Go!"/>
+            <!--//look how to clear form-->
+            <!--<input type="clear" value="Start Over!"/>-->
+        </form>
 
     </body>
 </html>
+<?php
+
+?>
