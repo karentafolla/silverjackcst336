@@ -165,9 +165,12 @@
         "score"=>"13",
         "suit"=>"Spades"];
 
-
-    //indexed array         
-    // $deck = [];
+//deck needed for shuffling and dealing
+//indexed array         
+    $deck = [$club1, $club2, $club3, $club4, $club5, $club6, $club7, $club8, $club9, $club10, $clubJack, $clubQueen, $clubKing,
+             $diamonds1, $diamonds2, $diamonds3, $diamonds4, $diamonds5, $diamonds6, $diamonds7, $diamonds8, $diamonds9, $diamonds10, $diamondsJack, $diamondsQueen, $diamondsKing,
+             $hearts1, $hearts2, $hearts3, $hearts4, $hearts5, $hearts6, $hearts7, $hearts8, $hearts9, $hearts10, $heartsJack, $heartsQueen, $heartsKing,
+             $spades1, $spades2, $spades3, $spades4, $spades5, $spades6, $spades7, $spades8, $spades9, $spades10, $spadesJack, $spadesQueen, $spadesKing];
     
     echo  $club1["imageName"];
     
