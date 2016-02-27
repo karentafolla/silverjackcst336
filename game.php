@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
-
 <?php
+//arrays holding the card descriptions
 //clubs
      $club1= ["imageName" => '<img src="assets/clubs/1.png"/>',
              "score" => "1",
@@ -166,25 +166,25 @@
         "suit"=>"Spades"];
 
 //deck needed for shuffling and dealing
-//indexed array         
     $deck = [$club1, $club2, $club3, $club4, $club5, $club6, $club7, $club8, $club9, $club10, $clubJack, $clubQueen, $clubKing,
              $diamonds1, $diamonds2, $diamonds3, $diamonds4, $diamonds5, $diamonds6, $diamonds7, $diamonds8, $diamonds9, $diamonds10, $diamondsJack, $diamondsQueen, $diamondsKing,
              $hearts1, $hearts2, $hearts3, $hearts4, $hearts5, $hearts6, $hearts7, $hearts8, $hearts9, $hearts10, $heartsJack, $heartsQueen, $heartsKing,
              $spades1, $spades2, $spades3, $spades4, $spades5, $spades6, $spades7, $spades8, $spades9, $spades10, $spadesJack, $spadesQueen, $spadesKing];
     
-    echo  $club1["imageName"];
+//Shuffles the deck of cards
+   shuffle($deck);
     
     //assosiative array
-    $player1 =["imageName" => "",
+    $player1 =["imageName" => '<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRjQzx5YAtUlTxgVGM877ilIQVn3TAXXnfo5a6xWMtrn3NuaIwE8w"/>',
               "name" => $_POST["p1"]];
-    $player2 =["imageName" => "",
+    $player2 =["imageName" => '<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRareKz7bKsew7N5eVN09FiuadmwfXHbsPQR-29_1SGF7xCSIbn2"/>',
               "name" => $_POST["p2"]];
-    $player3 =["imageName" => "",
+    $player3 =["imageName" => '<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT50VSXNJSF69BuMZg6QAkpeWx3UJnkQhqPYyBZACLQQb8yGFgY"/>',
               "name" => $_POST["p3"]];
-    $player4 =["imageName" => "",
+    $player4 =["imageName" => '<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSQ5qjUw6lRr3QrQFubmuxyndUgrCo6XgWuUiRuyzD0Ddo_ujZODA"/>',
               "name" => $_POST["p4"]];
     
-    //indexed array
+//holds players values
     $table = [$player1, $player2, $player3, $player4];
     
     //var_dump($table);
@@ -208,8 +208,9 @@
     </head>
     <body>
     <?php
-        var_dump($table);
+        //var_dump($table);
     ?>
+    <h1 align="center">Silverjack</h1>
     <form action="game.php" method="POST">
         <input type="hidden" name="p1" value="<?= $_POST["p1"] ?>"/>
         <input type="hidden" name="p2" value="<?= $_POST["p2"] ?>"/>
@@ -217,7 +218,6 @@
         <input type="hidden" name="p4" value="<?= $_POST["p4"] ?>"/>
         <input type="submit" value="Play again!"/>
     </form>
-    
 
     </body>
 </html>
