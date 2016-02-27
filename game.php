@@ -195,27 +195,26 @@
     $player4 =["imageName" => '<img src="assets/avatars/penguin.jpg"/>',
               "name" => $_POST["p4"]];
     
-//distributes cards
+//dealing cards
     $totalCardsUsed = 0;
     
     distributeCards($deck, $player1, $totalCardsUsed);
-    echo $totalCardsUsed;
     distributeCards($deck, $player2, $totalCardsUsed);
-    echo $totalCardsUsed;
     distributeCards($deck, $player3, $totalCardsUsed);
-    echo $totalCardsUsed;
     distributeCards($deck, $player4, $totalCardsUsed);
-    echo $totalCardsUsed;
     
     function distributeCards($deck, $player, $totalCardsUsed){
             global $totalCardsUsed;
-            $numberOfCards = rand(4,6);
-            var_dump($player);
-            for($i = 0 ; $i < $numberOfCards; $i++){
-              var_dump($deck[$totalCardsUsed]);
-                $totalCardsUsed++;
+            //checks if we have used all 52 cards
+            if($totalCardsUsed < 52){
+                $numberOfCards = rand(4,6);
+                var_dump($player);
+                for($i = 0 ; $i < $numberOfCards; $i++){
+                  var_dump($deck[$totalCardsUsed]);
+                    $totalCardsUsed++;
+                }
+                echo '<br>';
             }
-            echo '<br>';
     }
     
     
