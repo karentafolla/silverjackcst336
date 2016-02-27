@@ -184,8 +184,8 @@
     // $player4 =["imageName" => '<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSQ5qjUw6lRr3QrQFubmuxyndUgrCo6XgWuUiRuyzD0Ddo_ujZODA"/>',
     //           "name" => $_POST["p4"]];
     
-//holds players values
-    
+
+//holds players name and image
     $player1 =["imageName" => '<img src="assets/avatars/bear.jpg"/>',
               "name" => $_POST["p1"]];
     $player2 =["imageName" => '<img src="assets/avatars/bird.jpg"/>',
@@ -195,7 +195,28 @@
     $player4 =["imageName" => '<img src="assets/avatars/penguin.jpg"/>',
               "name" => $_POST["p4"]];
     
+//distributes cards
+    $totalCardsUsed = 0;
     
+    distributeCards($deck, $player1, $totalCardsUsed);
+    echo $totalCardsUsed;
+    distributeCards($deck, $player2, $totalCardsUsed);
+    echo $totalCardsUsed;
+    distributeCards($deck, $player3, $totalCardsUsed);
+    echo $totalCardsUsed;
+    distributeCards($deck, $player4, $totalCardsUsed);
+    echo $totalCardsUsed;
+    
+    function distributeCards($deck, $player, $totalCardsUsed){
+            global $totalCardsUsed;
+            $numberOfCards = rand(4,6);
+            var_dump($player);
+            for($i = 0 ; $i < $numberOfCards; $i++){
+              var_dump($deck[$totalCardsUsed]);
+                $totalCardsUsed++;
+            }
+            echo '<br>';
+    }
     
     
     $table = [$player1, $player2, $player3, $player4];
