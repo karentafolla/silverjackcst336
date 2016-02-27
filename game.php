@@ -174,23 +174,17 @@
 //Shuffles the deck of cards
    shuffle($deck);
     
-    //assosiative array
-<<<<<<< HEAD
-    
-    
-    //indexed array
-=======
-    $player1 =["imageName" => '<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRjQzx5YAtUlTxgVGM877ilIQVn3TAXXnfo5a6xWMtrn3NuaIwE8w"/>',
-              "name" => $_POST["p1"]];
-    $player2 =["imageName" => '<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRareKz7bKsew7N5eVN09FiuadmwfXHbsPQR-29_1SGF7xCSIbn2"/>',
-              "name" => $_POST["p2"]];
-    $player3 =["imageName" => '<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT50VSXNJSF69BuMZg6QAkpeWx3UJnkQhqPYyBZACLQQb8yGFgY"/>',
-              "name" => $_POST["p3"]];
-    $player4 =["imageName" => '<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSQ5qjUw6lRr3QrQFubmuxyndUgrCo6XgWuUiRuyzD0Ddo_ujZODA"/>',
-              "name" => $_POST["p4"]];
+    // //assosiative array
+    // $player1 =["imageName" => '<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRjQzx5YAtUlTxgVGM877ilIQVn3TAXXnfo5a6xWMtrn3NuaIwE8w"/>',
+    //           "name" => $_POST["p1"]];
+    // $player2 =["imageName" => '<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRareKz7bKsew7N5eVN09FiuadmwfXHbsPQR-29_1SGF7xCSIbn2"/>',
+    //           "name" => $_POST["p2"]];
+    // $player3 =["imageName" => '<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT50VSXNJSF69BuMZg6QAkpeWx3UJnkQhqPYyBZACLQQb8yGFgY"/>',
+    //           "name" => $_POST["p3"]];
+    // $player4 =["imageName" => '<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSQ5qjUw6lRr3QrQFubmuxyndUgrCo6XgWuUiRuyzD0Ddo_ujZODA"/>',
+    //           "name" => $_POST["p4"]];
     
 //holds players values
->>>>>>> 185fe461c6c8b662c6cfcb8c7d7642d54ab127d8
     
     $player1 =["imageName" => '<img src="assets/avatars/bear.jpg"/>',
               "name" => $_POST["p1"]];
