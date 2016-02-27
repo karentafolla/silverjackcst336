@@ -175,14 +175,15 @@
     echo  $club1["imageName"];
     
     //assosiative array
-    $player1 =["imageName" => "",
+    $player1 =["imageName" => '<img src="assets/avatars/bear.jpg"/>',
               "name" => $_POST["p1"]];
-    $player2 =["imageName" => "",
+    $player2 =["imageName" => '<img src="assets/avatars/bird.jpg"/>',
               "name" => $_POST["p2"]];
-    $player3 =["imageName" => "",
+    $player3 =["imageName" => '<img src="assets/avatars/cat.jpg"/>',
               "name" => $_POST["p3"]];
-    $player4 =["imageName" => "",
+    $player4 =["imageName" => '<img src="assets/avatars/penguin.jpg"/>',
               "name" => $_POST["p4"]];
+    
     
     //indexed array
     $table = [$player1, $player2, $player3, $player4];
