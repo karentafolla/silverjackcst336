@@ -197,26 +197,51 @@
     
 //dealing cards
     $totalCardsUsed = 0;
+    $score = [];
+    $playerCount = 1;
     
-    distributeCards($deck, $player1, $totalCardsUsed);
-    distributeCards($deck, $player2, $totalCardsUsed);
-    distributeCards($deck, $player3, $totalCardsUsed);
-    distributeCards($deck, $player4, $totalCardsUsed);
+    distributeCards($deck, $player1, $totalCardsUsed, $score);
+    distributeCards($deck, $player2, $totalCardsUsed, $score);
+    distributeCards($deck, $player3, $totalCardsUsed, $score);
+    distributeCards($deck, $player4, $totalCardsUsed, $score);
     
-    function distributeCards($deck, $player, $totalCardsUsed){
+    //distribute Cards and Score
+    function distributeCards($deck, $player, $totalCardsUsed, $score){
             global $totalCardsUsed;
+            global $score;
+            global $playerCount;
+            $sum;
+            
             //checks if we have used all 52 cards
             if($totalCardsUsed < 52){
                 $numberOfCards = rand(4,6);
-                var_dump($player);
+                echo $player['imageName'];
                 for($i = 0 ; $i < $numberOfCards; $i++){
-                  var_dump($deck[$totalCardsUsed]);
+                    echo $deck[$totalCardsUsed]['imageName'];  
+                    $sum+= $deck[$totalCardsUsed]['score'];
                     $totalCardsUsed++;
                 }
+                $score[$playerCount] = $sum;
+                echo $sum;
                 echo '<br>';
             }
+            $playerCount++;
     }
+     
+    echo max($score);
     
+    echo findWinner($score);
+//pass in array of scores to see who is closer to 42
+    function findWinner($score){
+        global $winner;
+        sort($score);
+        for($i =1; $i<=4; $i){
+            if($score[$i] == 42){
+                $winner = $i;
+            }
+        }
+        
+    }
     
     $table = [$player1, $player2, $player3, $player4];
     
@@ -227,6 +252,7 @@
     //           "position2" => $player2,
     //           "position3" => $player3,
     //           "position4" => $player4];
+    
     $hand = ["player" => null,
              "cards" => [], //indexed array of cards
              "score" => ""]; 
