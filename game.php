@@ -173,17 +173,6 @@
     
 //Shuffles the deck of cards
    shuffle($deck);
-    
-    // //assosiative array
-    // $player1 =["imageName" => '<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRjQzx5YAtUlTxgVGM877ilIQVn3TAXXnfo5a6xWMtrn3NuaIwE8w"/>',
-    //           "name" => $_POST["p1"]];
-    // $player2 =["imageName" => '<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRareKz7bKsew7N5eVN09FiuadmwfXHbsPQR-29_1SGF7xCSIbn2"/>',
-    //           "name" => $_POST["p2"]];
-    // $player3 =["imageName" => '<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT50VSXNJSF69BuMZg6QAkpeWx3UJnkQhqPYyBZACLQQb8yGFgY"/>',
-    //           "name" => $_POST["p3"]];
-    // $player4 =["imageName" => '<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSQ5qjUw6lRr3QrQFubmuxyndUgrCo6XgWuUiRuyzD0Ddo_ujZODA"/>',
-    //           "name" => $_POST["p4"]];
-    
 
 //holds players name and image
     $player1 =["imageName" => '<img src="assets/avatars/bear.jpg"/>',
@@ -211,12 +200,16 @@
                 var_dump($player);
                 for($i = 0 ; $i < $numberOfCards; $i++){
                   var_dump($deck[$totalCardsUsed]);
+                  //index of scores add to a variable
                     $totalCardsUsed++;
                 }
                 echo '<br>';
             }
     }
     
+//keeps the score of the player
+
+    echo $deck[$totalCardsUsed["score"]];
     
     $table = [$player1, $player2, $player3, $player4];
     
