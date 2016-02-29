@@ -183,6 +183,9 @@
               "name" => $_POST["p3"]];
     $player4 =["imageName" => '<img src="assets/avatars/penguin.jpg"/>',
               "name" => $_POST["p4"]];
+              
+//array of players
+    $players=[$player1,$player2,$player3, $player4];
     
 //dealing cards
     $totalCardsUsed = 0;
@@ -194,7 +197,7 @@
     distributeCards($deck, $player3, $totalCardsUsed, $score);
     distributeCards($deck, $player4, $totalCardsUsed, $score);
     
-    //distribute Cards and Score
+//distribute Cards and Score
     function distributeCards($deck, $player, $totalCardsUsed, $score){
             global $totalCardsUsed;
             global $score;
@@ -220,18 +223,30 @@
     $winner = 0;
     
     echo findWinner($score);
+    
 //pass in array of scores to see who is closer to 42
     function findWinner($score){
+        $highhold=$score[0];
         global $winner;
         sort($score);
+    //finds the highest of the 4 scores
         for($i =1; $i<=4; $i){
-            if($score[$i] == 42){
-                $winner = $i;
+            if($score[$i] < 42 && $scores[$i]>$highhold)
+            {
+               $highhold==$scores[$i];
             }
         }
-        
+    //finds which player the winning score belongs to
+        for ($k=0;$k<4;$k++)
+        {
+          if ($highhold==$players[$k]['score'])
+          {
+              $winner=$players[$k];
+          }
+        }
     }
-    
+
+//displays winner    
     switch($winner){
         case 1:
             echo $player1['name'];
@@ -257,12 +272,12 @@
     //           "position3" => $player3,
     //           "position4" => $player4];
     
-    $hand = ["player" => null,
-             "cards" => [], //indexed array of cards
-             "score" => ""]; 
+    //$hand = ["player" => null,
+     //        "cards" => [], //indexed array of cards
+     //        "score" => ""]; 
     
-    $game = ["location", $table, 
-             "hands", []];
+   // $game = ["location", $table, 
+    //         "hands", []];
 ?>
     
 <html>
