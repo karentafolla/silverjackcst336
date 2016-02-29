@@ -228,7 +228,7 @@
             $playerCount++;
     }
      
-    echo max($score);
+    $winner = 0;
     
     echo findWinner($score);
 //pass in array of scores to see who is closer to 42
@@ -241,6 +241,21 @@
             }
         }
         
+    }
+    
+    switch($winner){
+        case 1:
+            echo $player1['name'];
+            break;
+        case 2:
+            echo $player2['imageName'];
+            break;
+        case 3:
+            echo $player3['imageName'];
+            break;
+        case 4:
+            echo $player4['imageName'];
+            break;
     }
     
     $table = [$player1, $player2, $player3, $player4];
